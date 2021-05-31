@@ -8,10 +8,9 @@ from chemlg.sascore import sascore
 from chemlg.scscore import scscore
 
 #Demo section
-direct = os.getcwd()
-# print(direct)
 #Tip for the read_csv function, use r'directory\csvfilename.csv' as the argument. Just putting in the csv file name doesn't work for some reason.
-df1 = pd.read_csv(r'C:\Users\nitin\Documents\UB\Hachmann Group\Thesis\Retro_synth\integration_lg\tests\scoring\final_smiles.csv')
+#final_smiles.csv file is provided in this directory as a sample file, paste it into a convenient location and run the test commands to get the output.
+df1 = pd.read_csv(r'insertdirectoryhere\final_smiles.csv')
 # print(df1.head(5))
 
 smi = df1['SMILES']
