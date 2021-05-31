@@ -4,8 +4,8 @@
 import pandas as pd
 from rdkit import Chem
 import os
-from chemlg import sascore
-from chemlg import scscore
+from chemlg.sascore import sascore
+from chemlg.scscore import scscore
 
 #Demo section
 direct = os.getcwd()
@@ -18,6 +18,6 @@ smi = df1['SMILES']
 mols = [Chem.MolFromSmiles(s) for s in smi] #SAScore needs a mol input
 # print(mols[:5])
 #
-# df_sa = sascore(mols)
+df_sa = sascore(mols)
 #
-# df_sc = scscore(smi)
+df_sc = scscore(smi)
