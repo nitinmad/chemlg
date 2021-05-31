@@ -116,7 +116,7 @@ def scscore(smi):
     scores = []
     smile = []
     model = SCScorer()
-    model.restore(os.path.join(os.getcwd(), 'scscore','models', 'full_reaxys_model_1024bool', 'model.ckpt-10654.as_numpy.json.gz'))
+    model.restore(os.path.join(os.getcwd(), 'chemlg', 'model.ckpt-10654.as_numpy.json.gz'))
     smis = ['CCCOCCC', 'CCCNc1ccccc1']
     for s in smi:
         (smis, sco) = model.get_score_from_smi(s)
