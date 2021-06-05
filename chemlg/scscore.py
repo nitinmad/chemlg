@@ -130,6 +130,16 @@ def scscore(smi):
     print(df_sc.head(5))
     return df_sc
 
+def sc_downselect(smi):
+    df_sa = scscore(smi)
+    df_sa = df_sa.drop_duplicates()
+    df_sa = df_sa.sort_values(by=['SCScore'],ascending = False, ignore_index=True)
+    # print(df_sa.head())
+    df_sa_down = df_sa.tail(int(len(df_sa)/10))
+    df_sa_down.reset_index(inplace=True,drop=True)
+    return df_sa_down
+    # print(df_sa_down)
+
 # Demo section; replicated in notebook.
 # if __name__ == '__main__':
 #     model = SCScorer()

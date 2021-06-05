@@ -132,6 +132,15 @@ def sascore(mols):
     print(df1.head(5))
     return df1
 
+def sa_downselect(mols):
+    df_sa = sascore(mols)
+    df_sa = df_sa.drop_duplicates()
+    df_sa = df_sa.sort_values(by=['SAScore'],ascending = False, ignore_index=True)
+    # print(df_sa.head())
+    df_sa_down = df_sa.tail(int(len(df_sa)/10))
+    df_sa_down.reset_index(inplace=True,drop=True)
+    return df_sa_down
+    # print(df_sa_down)
 
 #
 #  Copyright (c) 2013, Novartis Institutes for BioMedical Research Inc.
